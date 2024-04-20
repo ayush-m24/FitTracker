@@ -25,6 +25,7 @@ app.use(express.urlencoded({ extended: true })); // for form data
 app.use(cors());
 app.use("/api/user/", UserRoutes);
 
+
 // error handler
 app.use((err, req, res, next) => {
   const status = err.status || 500;
@@ -56,7 +57,7 @@ const connectDB = () => {
 const startServer = async () => {
   try {
     connectDB();
-    app.listen(8090, () => console.log("Server started on port 8090"));
+    app.listen(8080, () => console.log("Server started on port 8080"));
   } catch (error) {
     console.log(error);
   }
